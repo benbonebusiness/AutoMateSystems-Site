@@ -75,10 +75,12 @@ const chatLimitMsg = document.getElementById('chat-limit-msg');
 
 if (chatBody) {
 let sessionId = localStorage.getItem('automate_session_id');
-if (!sessionId) {
-  sessionId = 'web_' + Math.random().toString(36).substring(2, 15) + Date.now();
-  localStorage.setItem('automate_session_id', sessionId);
-}  let msgCount = 0;
+  if (!sessionId) {
+    sessionId = 'web_' + Math.random().toString(36).substring(2, 15) + Date.now();
+    localStorage.setItem('automate_session_id', sessionId);
+  }
+
+  let msgCount = 0;
 
   function scrollBottom() {
     chatBody.scrollTop = chatBody.scrollHeight;
