@@ -74,8 +74,11 @@ const chatSendBtn = document.getElementById('chat-send-btn');
 const chatLimitMsg = document.getElementById('chat-limit-msg');
 
 if (chatBody) {
-  const sessionId = 'web_' + Math.random().toString(36).substring(2, 15) + Date.now();
-  let msgCount = 0;
+let sessionId = localStorage.getItem('automate_session_id');
+if (!sessionId) {
+  sessionId = 'web_' + Math.random().toString(36).substring(2, 15) + Date.now();
+  localStorage.setItem('automate_session_id', sessionId);
+}  let msgCount = 0;
 
   function scrollBottom() {
     chatBody.scrollTop = chatBody.scrollHeight;
