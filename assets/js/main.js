@@ -202,9 +202,5 @@ let sessionId = localStorage.getItem('automate_session_id');
     chatSendBtn.disabled = chatInput.value.trim().length === 0;
   });
 
-  /* הודעת פתיחה */
-  setTimeout(() => {
-    appendMessage('bot', 'שלום! אני הבוט של AutoMate. אני יכול לענות לך על כל שאלה לגבי השירות שלנו — איך זה עובד, מה כלול, כמה זה עולה.\n\nבמהלך השיחה, ההודעות נשמרות לצורך שיפור השירות. [מדיניות פרטיות](privacy.html)\n\nאיך אעזור לך היום?');
-    chatSendBtn.disabled = false;
-  }, 600);
+  chatSendBtn.disabled = false;
 }
